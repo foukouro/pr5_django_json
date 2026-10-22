@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "specialist_id": 1,
+    "client_name": "Иван",
+    "date": "2026-11-01",
+    "status": "Подтверждена"
+  },
+  {
+    "id": 2,
+    "specialist_id": 2,
+    "client_name": "Мария",
+    "date": "2026-11-02",
+    "status": "Ожидает"
+  }
+]

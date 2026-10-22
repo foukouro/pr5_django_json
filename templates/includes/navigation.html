@@ -1,0 +1,21 @@
+{% load static %}
+<nav class="navbar navbar-expand-md site-nav">
+    <div class="container">
+        <a class="navbar-brand brand d-flex align-items-center gap-2" href="{% url 'homepage:index' %}">
+            <img src="{% static 'homepage/img/logo.svg' %}" alt="" width="34" height="34">
+            <span>Принятие</span>
+        </a>
+        <button class="navbar-toggler" type="button"
+            aria-controls="primaryNavigation" aria-expanded="false"
+            aria-label="Открыть меню">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="primaryNavigation">
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="{% url 'homepage:index' %}">Главная</a>
+                <a class="nav-link" href="{% url 'specialists:list' %}">Специалисты</a>
+                <a class="nav-link" href="{% url 'appointments:list' %}">Записи</a>
+            </div>
+        </div>
+    </div>
+</nav>

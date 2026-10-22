@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Записи{% endblock %}
+
+{% block content %}
+<section class="content-section">
+    <p class="section-label">Расписание</p>
+    <h1 class="section-heading mb-4">Записи</h1>
+    <ul class="list-group appointment-list">
+        {% for appointment in appointments %}
+            <li class="list-group-item appointment-row">
+                <div class="appointment-info">
+                    <a class="appointment-link"
+                       href="{% url 'appointments:detail' appointment.id %}">
+                        Запись №{{ appointment.id }}
+                    </a>
+                    <span>{{ appointment.specialist.name }}</span>
+                    <time datetime="{{ appointment.date }}">{{ appointment.date }}</time>
+                </div>
+                {% include "appointments/includes/appointment_status.html" %}
+            </li>
+        {% empty %}
+            <li class="list-group-item empty-state">Записей не найдено.</li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}

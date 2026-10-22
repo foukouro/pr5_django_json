@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Специалисты{% endblock %}
+
+{% block content %}
+<section class="content-section">
+    <div class="section-header">
+        <div>
+            <p class="section-label">Команда сервиса</p>
+            <h1 class="section-heading">Наши специалисты</h1>
+        </div>
+        <p class="count-label">Всего специалистов: {{ specialists|length }}</p>
+    </div>
+    <div class="row g-3">
+        {% for specialist in specialists %}
+            <div class="col-md-6 col-xl-4">
+                {% include "specialists/includes/specialist_card.html" %}
+            </div>
+        {% empty %}
+            <div class="col-12">
+                <p class="empty-state">Пока нет специалистов.</p>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

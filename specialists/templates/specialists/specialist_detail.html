@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}{% if specialist %}{{ specialist.name }}{% else %}Специалист не найден{% endif %}{% endblock %}
+
+{% block content %}
+<section class="content-section">
+    {% if specialist %}
+        <p class="section-label">Специалист</p>
+        <article class="card detail-card">
+            <div class="card-body p-4 p-md-5">
+                <h1 class="section-heading">{{ specialist.name }}</h1>
+                <p class="specialist-focus fs-5">{{ specialist.specialization }}</p>
+                <p><strong>Опыт:</strong> {{ specialist.experience_years }} лет</p>
+                {% if specialist.is_experienced %}
+                    <span class="badge text-bg-success">Опытный специалист</span>
+                {% else %}
+                    <span class="badge text-bg-warning">Начинающий специалист</span>
+                {% endif %}
+                <div class="detail-actions mt-4">
+                    <a class="btn btn-primary" href="{% url 'appointments:list' %}">
+                        Посмотреть записи
+                    </a>
+                    <a class="btn btn-outline-secondary" href="{% url 'specialists:list' %}">
+                        К специалистам
+                    </a>
+                </div>
+            </div>
+        </article>
+    {% else %}
+        <div class="empty-state">
+            <p class="section-label">Ошибка 404</p>
+            <h1 class="section-heading">Специалист не найден</h1>
+            <a class="btn btn-outline-secondary mt-3" href="{% url 'specialists:list' %}">
+                К списку специалистов
+            </a>
+        </div>
+    {% endif %}
+</section>
+{% endblock %}

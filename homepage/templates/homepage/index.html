@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Психотерапевтическая помощь{% endblock %}
+
+{% block content %}
+<section class="hero rounded-2">
+    <div class="hero-content">
+        <p class="eyebrow mb-3">Психотерапевтическая помощь</p>
+        <h1 class="hero-title mb-3">В пространстве принятия</h1>
+        <p class="hero-copy mb-4">Поддержка начинается с бережного разговора.
+            Познакомьтесь со специалистами и выберите подходящий формат встречи.</p>
+        <div class="hero-actions">
+            <a class="btn btn-coral btn-lg" href="{% url 'specialists:list' %}">
+                Найти специалиста
+            </a>
+            <a class="btn btn-outline-light btn-lg" href="{% url 'appointments:list' %}">
+                Посмотреть записи
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="row g-4 home-intro">
+    <div class="col-md-7">
+        <p class="section-label mb-2">Путь к поддержке</p>
+        <h2 class="section-heading mb-3">В своём темпе и без оценок</h2>
+        <p class="text-secondary mb-0">Здесь можно посмотреть специализации
+            терапевтов и ознакомиться с расписанием консультаций. Выбор всегда
+            остаётся за вами.</p>
+    </div>
+    <div class="col-md-5">
+        <div class="intro-note h-100">
+            <h3 class="h5">Начните с простого шага</h3>
+            <p class="text-secondary">Посмотрите, с какими запросами работают
+                специалисты сервиса.</p>
+            <a class="link-success fw-semibold" href="{% url 'specialists:list' %}">
+                Все специалисты <span aria-hidden="true">→</span>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

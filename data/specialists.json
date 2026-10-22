@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Анна Иванова",
+    "specialization": "КПТ",
+    "experience_years": 5
+  },
+  {
+    "id": 2,
+    "name": "Петр Сидоров",
+    "specialization": "Гештальт-терапия",
+    "experience_years": 8
+  },
+  {
+    "id": 3,
+    "name": "Елена Смирнова",
+    "specialization": "Семейная терапия",
+    "experience_years": 3
+  }
+]
